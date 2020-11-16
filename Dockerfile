@@ -18,7 +18,9 @@ RUN apt-get update && apt-get install -y \
     vim \
     unzip \
     git \
-    curl
+    curl \
+    sqlite3 libsqlite3-dev \
+    tmux fish tree htop 
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
