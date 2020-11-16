@@ -21,9 +21,9 @@ alias pspec="docker-compose exec app php ./vendor/bin/phpunit"
 ```
 
 ## Docker Cheatsheet
-```docker-compose up -d```
-```docker logs --tail 50 --follow --timestamps c7e55a34a70e```
-```docker ps```
+`docker-compose up -d`
+`docker logs --tail 50 --follow --timestamps c7e55a34a70e`
+`docker ps`
 
 ## execute commands inside Docker container
 $ docker-compose exec app php ./vendor/bin/phpunit
@@ -31,7 +31,8 @@ $ docker-compose exec app php ./vendor/bin/phpunit tests/Feature/ProjectsTest.ph
 $ docker-compose exec db mysql -u root -p
 
 ## Laravel generators using Artisan
-
+`artisan make:migration create_projects_table`
+`artisan migrate`
 `artisan make:controller ProjectController --resource --model=Project`
 `artisan tinker`
 ```bash
@@ -57,13 +58,8 @@ App\Models\Project::all();
 `$ ./vendor/bin/phpunit --version`
 alias in ~/.bashrc: `phpunit -v`
 
-From host machine:
-
-instead of `docker-compose exec app php artisan make:migration create_projects_table` use alias artisan e.g.:
-```$ artisan make:migration create_projects_table```
-
 ### Known Issues
-- ```CSRF token mismatch``` when running PHPUnit: ```artisan config:clear```
+- `CSRF token mismatch` when running PHPUnit. Solution: `artisan config:clear`
 
 
 
